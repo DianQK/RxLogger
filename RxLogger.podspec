@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
   s.source       = { :git => "https://github.com/DianQK/RxLogger.git", :tag => s.version }
-  s.source_files = 'source/*.swift'
+  s.source_files = 'Sources/*.swift'
   s.dependency 'RxSwift', '~> 2.2.0'
   s.frameworks = 'Foundation'
 end
