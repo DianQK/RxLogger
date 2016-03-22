@@ -10,26 +10,25 @@ import UIKit
 import RxSwift
 
 class ViewController: UIViewController {
+    
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        myJust(1).debug().log().subscribeNext {
-            print("\($0)")
-        }
+        
+        myEvent(1).log().subscribe { _ in
+            
+        }.addDisposableTo(disposeBag)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     
-    func myJust<E>(element: E) -> Observable<E> {
+    func myEvent<E>(element: E) -> Observable<E> {
         return Observable.create { observer in
             observer.on(.Next(element))
-            observer.on(.Completed)
+            observer.onError(Error())
             return NopDisposable.instance
         }
     }
 }
+
+struct Error: ErrorType { }

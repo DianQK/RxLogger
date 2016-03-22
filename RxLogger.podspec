@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RxLogger"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Color Log for RxSwift"
   s.description  = "Color Log for RxSwift, use XcodeColors"
   s.homepage     = "https://github.com/DianQK/RxLogger"
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
   s.source       = { :git => "https://github.com/DianQK/RxLogger.git", :tag => s.version }
   s.source_files = 'Sources/*.swift'
-  s.dependency 'RxSwift', '~> 2.2.0'
+  s.dependency 'RxSwift', '~> 2.3.1'
   s.frameworks = 'Foundation'
 end
